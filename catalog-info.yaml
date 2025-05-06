@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: testdonet0506aaa-gitops
+  description: This is GitOps manifest for testdonet0506aaa   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=testdonet0506aaa
+    backstage.io/kubernetes-id: testdonet0506aaa 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: testdonet0506aaa
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:testdonet0506aaa
